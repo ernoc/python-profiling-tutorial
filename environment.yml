@@ -1,0 +1,14 @@
+name: profiling
+channels:
+  - http://artifactory.genomicsplc.com:8081/artifactory/repo.continuum.io/pkgs/free
+  - http://artifactory.genomicsplc.com:8081/artifactory/repo.continuum.io/pkgs/main
+  - http://artifactory.genomicsplc.com:8081/artifactory/dependencies/conda-py3
+  - defaults
+dependencies:
+  - python=3.6
+  - requests
+  - jupyter
+  - line_profiler
+  - memory_profiler
+  - snakeviz
+  - pyprof2calltree
