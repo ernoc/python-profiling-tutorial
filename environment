@@ -1,5 +1,3 @@
 #!/bin/false # The user should source the environment not execute it
 
-export PROJECT_NAME="io-tools"
 export PROJECT_HOME="$( readlink -f "$( dirname "${BASH_SOURCE[0]}" )" )"
-export PROJECT_ENV="${PROJECT_HOME}/.env"

@@ -1,6 +1,16 @@
-env_name=${1:-profiling}
+#!/usr/bin/env bash
+set -e
+
+ENV_NAME=${1:-profiling}
 
 source "$( dirname "${BASH_SOURCE[0]}" )/environment"
+PROJECT_ENV=${CONDA_PREFIX:-${PROJECT_HOME}/.env}
+
 if [ -z ${CONDA_PATH_BACKUP+x} ]; then export CONDA_PATH_BACKUP=""; fi
 if [ -z ${PS1+x} ]; then export PS1=""; fi
-source "$PROJECT_ENV/bin/activate" ${env_name}
+
+if [ -f "${PROJECT_ENV}/bin/activate" ]; then
+    source "${PROJECT_ENV}/bin/activate" ${ENV_NAME}
+else
+    >&2 echo "Project is not set up"
+fi

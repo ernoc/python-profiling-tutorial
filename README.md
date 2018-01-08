@@ -4,8 +4,7 @@ It's focus mainly on python programs.
 
 ## Installation
 
-### TL;DR
-`./setup.sh`
+**TL;DR:** Simply run `./setup.sh`
 
 This will create a brand new conda environment in the local `.env` directory.
 
@@ -17,6 +16,6 @@ from an active conda environment execute:
 ## Launching the tutorial
 
 ```
-source activate
+source ./activate profiling
 python -m jupyter notebook ./profiling.ipynb
 ```
