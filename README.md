@@ -16,6 +16,5 @@ from an active conda environment execute:
 ## Launching the tutorial
 
 ```
-source ./activate profiling
-python -m jupyter notebook ./profiling.ipynb
+./launch.sh
 ```

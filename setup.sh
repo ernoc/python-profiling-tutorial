@@ -10,3 +10,5 @@ PROJECT_ENV=${PROJECT_HOME}/.env
 if [ -z ${CONDA_PATH_BACKUP+x} ]; then export CONDA_PATH_BACKUP=""; fi
 if [ -z ${PS1+x} ]; then export PS1=""; fi
 (source "${PROJECT_ENV}/bin/activate" && conda env create -f environment.yml)
+
+echo "Done. Start with ./launch.sh"
