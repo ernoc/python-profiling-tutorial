@@ -27,7 +27,7 @@ def add_some_numbers(x_list, y_list):
     return result
 
 
-def take_a_walk_in_the_park(y_max=500):
+def take_a_walk_in_the_park(y_max=100):
     """Don't know exactly what I'm doing but surely it isn't nice code."""
 
     x_list = []
@@ -48,10 +48,10 @@ def take_a_walk_in_the_park(y_max=500):
     return sum
 
 
-def keep_python_busy():
+def keep_python_busy(how_much=100):
     """Take python for a walk (or a creep) and keep it busy but do nothing useful"""
 
-    take_a_walk_in_the_park()
+    take_a_walk_in_the_park(how_much)
     for _ in range(2):
         download_some_stuff()
 
