@@ -9,6 +9,7 @@ dependencies:
   - requests
   - jupyter
   - line_profiler
-  - memory_profiler
-  - snakeviz
+  - memory_profiler  
   - pyprof2calltree
+  - pip:
+    - snakeviz
