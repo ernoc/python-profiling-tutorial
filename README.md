@@ -1,6 +1,6 @@
 # Profiling Tutorial
-This tutorial demostrates several techniques for measuring resource usage and running time of your code.
-It's focus mainly on python programs.
+This tutorial demonstrates several techniques for measuring resource usage and running time of your code.
+It focuses mainly on python programs.
 
 ## Installation
 
