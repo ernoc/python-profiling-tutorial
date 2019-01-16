@@ -3,6 +3,14 @@ import random
 import requests
 
 
+def use_memory(str_repeat=10000, str_count=1000):
+    hello_list = []
+    for _ in range(str_count // 2):
+        hello_list.append('Hello world! ' * str_repeat)
+    for _ in range(str_count // 2):
+        hello_list.append('I am profiling! ' * str_repeat)
+
+
 def random_download():
     random_word = ''.join(random.sample('abcdefghijklmnopqrstuvwxyz', k=10))
     requests.get('http://www.example.com/' + random_word)
