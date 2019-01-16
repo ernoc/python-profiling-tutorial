@@ -1,4 +1,4 @@
 #!/bin/false # The user should source the environment not execute it
 
-# Realiable way to exapand to full path across linux and macos
+# Reliable way to expand to full path across linux and macos
 export PROJECT_HOME="$(python -c 'import os, sys; print(os.path.realpath(sys.argv[1]))' "$(dirname "${BASH_SOURCE[0]}" )" )"
