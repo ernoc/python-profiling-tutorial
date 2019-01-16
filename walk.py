@@ -1,56 +1,41 @@
+import math
 import random
 import requests
 
 
-def make_random_word():
-    """Python having some fun making a string in the least efficient way."""
-    characters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
-    l = random.randint(1, 20)
-    word = ''
-    for _ in range(l):
-        word += characters[random.randint(0, len(characters) - 1)]
-    return word
+def random_download():
+    random_word = ''.join(random.sample('abcdefghijklmnopqrstuvwxyz', k=10))
+    requests.get('http://www.example.com/' + random_word)
 
 
-def download_some_stuff():
-    suffix = "/" + make_random_word() + "_" + make_random_word()
-    prefix = "http://example.com"
-    requests.get(prefix + suffix)
+def primes_in_range(n):
+    """Use Sieve of Eratosthenes find all primes in range 1..n"""
+    is_prime = [True] * n  # is_prime[i] tells if i + 1 is a prime number
+    is_prime[0] = False
+
+    for prime_candidate in range(2, int(math.sqrt(n)) + 1):
+        if is_prime[prime_candidate - 1]:
+            # mark every multiple of prime_candidate as non-prime
+            for k in range(2, (n // prime_candidate) + 1):
+                non_prime = prime_candidate * k
+                assert non_prime <= n
+                is_prime[non_prime - 1] = False
+
+    primes = []
+    for i, i_is_prime in enumerate(is_prime):
+        if i_is_prime:
+            primes.append(i + 1)
+
+    return primes
 
 
-def add_some_numbers(x_list, y_list):
-    result = []
-    for x in x_list:
-        for y in y_list:
-            result.append(x + y)
-    return result
+def keep_python_busy(compute_repeat=6, io_repeat=3):
+    for _ in range(compute_repeat):
+        n = random.randint(1000000, 1200000)
+        primes_in_range(n)
 
-
-def take_a_walk_in_the_park(y_max=100):
-    x_list = []
-    y_list = []
-
-    for i in range(1, 100, 10):
-        for j in range(i, y_max):
-            x_list.append(i)
-            y_list.append(i + j)
-
-    z_list = add_some_numbers(x_list, y_list)
-    my_sum = 0
-    for z in z_list:
-        my_sum += z
-
-    download_some_stuff()
-
-    return my_sum
-
-
-def keep_python_busy(how_much=100):
-    """Take python for a walk (or a creep) and keep it busy but do nothing useful"""
-
-    take_a_walk_in_the_park(how_much)
-    for _ in range(2):
-        download_some_stuff()
+    for _ in range(io_repeat):
+        random_download()
 
 
 if __name__ == '__main__':
