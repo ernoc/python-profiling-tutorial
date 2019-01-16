@@ -12,4 +12,4 @@
 .ipynb_checkpoints
 
 # profiler output
-.prof
+*.prof
