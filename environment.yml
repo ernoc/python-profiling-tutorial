@@ -6,7 +6,6 @@ dependencies:
   - requests
   - jupyter
   - line_profiler
-  - memory_profiler  
-  - pyprof2calltree
+  - memory_profiler
   - pip:
     - snakeviz
