@@ -25,7 +25,7 @@ MINICONDA_URL="https://repo.continuum.io/miniconda/${CONDA_FILE_NAME}"
 # Install miniconda
 SCRIPT_DIR=$( dirname "${BASH_SOURCE[0]}" )
 if [ ! -d "${ENV}" ]; then
-    curl "${MINICONDA_URL}" > "${SCRIPT_DIR}/${CONDA_FILE_NAME}"
+    curl -L "${MINICONDA_URL}" > "${SCRIPT_DIR}/${CONDA_FILE_NAME}"
     bash "${SCRIPT_DIR}/${CONDA_FILE_NAME}" -b -p "${ENV}"
     rm "${SCRIPT_DIR}/${CONDA_FILE_NAME}"
     if [ "${MINICONDA_VERSION}" != "*" ]; then
