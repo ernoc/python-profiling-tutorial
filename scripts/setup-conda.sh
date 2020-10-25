@@ -14,7 +14,7 @@ ENV=$1
 OS=$(uname -s)
 if [ "${OS}" == "Linux" ]; then
     CONDA_FILE_NAME=${CONDA_FILE_NAME:-${MINICONDA_PREFIX}-${MINICONDA_VERSION}-Linux-x86_64.sh}
-    # Intentially not using environment variables here!
+    # Intentionally not using environment variables here!
 
 elif [ "${OS}" == "Darwin" ]; then
     CONDA_FILE_NAME=${CONDA_FILE_NAME:-${MINICONDA_PREFIX}-${MINICONDA_VERSION}-MacOSX-x86_64.sh}
